@@ -10,7 +10,7 @@ const SecondPart = ({btnState,setBtnState}) => {
           <label htmlFor="english" className="text-lg pr-3 font-normal">
           On a scale of 1-10, how would you rate your English communication skill?
           </label>
-          <select name="" id="english" className="text-base px-1 py-2 bg-gray-400 text-white cursor-pointer rounded">
+          <select name="" id="english" className="text-base bg-white inputBorder text-black cursor-pointer rounded">
             <option value="">Select..</option>
             <option value="1">1</option>
             <option value="2">2</option>

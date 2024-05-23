@@ -3,7 +3,6 @@ import { useState } from "react";
 import FirstPart from "./FirstPart";
 import SecondPart from "./SecondPart";
 import ThirdPart from "./ThirdPart";
-import SubmitButton from "./SubmitButton";
 
 const JobApplyFormRight = () => {
   const [btnState, setBtnState] = useState(1);
