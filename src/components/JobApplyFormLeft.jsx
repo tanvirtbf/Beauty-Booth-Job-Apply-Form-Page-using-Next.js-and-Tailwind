@@ -5,7 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 const JobApplyFormLeft = () => {
   return (
     <div className="col-span-12 sm:col-span-4 bg-[#1DBE72] h-auto p-4">
-      <div className="w-full flex justify-between h-[10%]">
+      <div className="w-full flex justify-between ">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ const JobApplyFormLeft = () => {
           </Link>
         </div>
       </div>
-      <div className="h-[90%] flex justify-center items-center flex-col">
+      <div className=" h-full flex justify-center items-center flex-col">
         <div className="flex justify-center">
           <img
             src="https://www.ansonika.com/potenza/img/info_graphic_1.svg"
