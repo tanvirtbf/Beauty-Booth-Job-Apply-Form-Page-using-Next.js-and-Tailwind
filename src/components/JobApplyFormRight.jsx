@@ -13,6 +13,7 @@ const JobApplyFormRight = () => {
           <input type="text" placeholder='First and Last Name' required className='inputBorder' />
           <input type="text" placeholder='Email Address' required className='inputBorder'/>
           <input type="text" placeholder='Phone' required className='inputBorder'/>
+          <input type="text" placeholder='Address' required className='inputBorder'/>
           <div className='flex flex-col gap-1'>
             <div>
               <label htmlFor="Gender" className='text-base text-[#222222] font-medium'>Gender</label>
