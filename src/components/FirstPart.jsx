@@ -5,7 +5,7 @@ import SubmitButton from './SubmitButton'
 const FirstPart = ({btnState,setBtnState}) => {
   return (
     <div className='text-black w-full sm:w-2/5 p-5 flex flex-col gap-4'>
-      <ProgressBar />
+      <ProgressBar btnState={btnState} />
       <div className="flex flex-col gap-1">
         <h2 className='font-semibold text-2xl text-[#222222]'>Presentation</h2>
         <h3 className='text-xl text-[#222222] font-medium'>Personal info</h3>
