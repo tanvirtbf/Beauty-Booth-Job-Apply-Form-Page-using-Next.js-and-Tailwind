@@ -73,7 +73,7 @@ const JobApplyFormLeft = () => {
         </div>
         <div className="flex justify-center pb-4">
           <button className="bg-[#F8BD2C] text-[#111] border-none cursor-pointer px-6 py-3 text-center font-semibold text-sm rounded-3xl hover:bg-pink-600 hover:text-white">
-            Purchase this template
+            Apply Here
           </button>
         </div>
       </div>
