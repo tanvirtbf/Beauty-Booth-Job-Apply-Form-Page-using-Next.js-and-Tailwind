@@ -30,4 +30,7 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .inputBorder{
+    @apply w-full rounded text-sm outline-none border border-[#ddd] px-4 py-2
+  }
 }
