@@ -11,7 +11,7 @@ const ProgressBar = ({btnState}) => {
   }
   return (
     <div className="bg-[#F0F0F0] w-full h-3 rounded-lg relative z-0">
-      <div className={`bg-green-400 absolute ${width} h-full rounded-lg z-10 transition-all duration-500 ease-in-out`}></div>
+      <div className={`bg-[#FF216D] absolute ${width} h-full rounded-lg z-10 transition-all duration-500 ease-in-out`}></div>
     </div>
   )
 }
