@@ -1,7 +1,7 @@
 import ProgressBar from "./ProgressBar";
 import SubmitButton from "./SubmitButton";
 
-const SecondPart = ({setBtnState}) => {
+const SecondPart = ({btnState,setBtnState}) => {
   return (
     <div className="text-black w-full sm:w-2/5 p-5 flex flex-col gap-4">
       <ProgressBar />
@@ -33,7 +33,7 @@ const SecondPart = ({setBtnState}) => {
           <input id="salary" type="text" placeholder='Your Answer' required className='inputBorder' />
         </div>
         <div className="bg-[#F0F0F0] w-full h-0.5 rounded-lg mt-5 mb-2"></div>
-        <SubmitButton setBtnState={setBtnState} />
+        <SubmitButton setBtnState={setBtnState} btnState={btnState} />
       </form>
     </div>
   );
