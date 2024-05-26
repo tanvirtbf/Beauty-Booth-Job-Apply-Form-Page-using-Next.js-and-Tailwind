@@ -1,12 +1,12 @@
 import React from 'react'
 
-const ProgressBar = ({btnState}) => {
+const ProgressBar = ({whichForm}) => {
   let width ;
-  if(btnState === 1){
+  if(whichForm === 1){
     width = 'w-0'
-  }else if(btnState === 2){
+  }else if(whichForm === 2){
     width = 'w-1/2'
-  }else if(btnState === 3){
+  }else if(whichForm === 3){
     width = 'w-full'
   }
   return (

@@ -1,10 +1,19 @@
 import FirstPart from "./FirstPart";
+import SecondPart from "./SecondPart";
+import ThirdPart from "./ThirdPart";
 
-const Form = () => {
-
+const Form = ({whichForm}) => {
   return (
     <div className="flex justify-center items-center text-black">
-      <FirstPart />
+      {
+        whichForm === 1 && <FirstPart /> 
+      }
+      {
+        whichForm === 2 && <SecondPart />
+      }
+      {
+        whichForm === 3 && <ThirdPart />
+      }
     </div>
   );
 };
