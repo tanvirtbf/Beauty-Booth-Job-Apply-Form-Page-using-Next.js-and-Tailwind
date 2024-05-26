@@ -1,5 +1,4 @@
-import SubmitButton from './Button'
-import ProgressBar from './ProgressBar'
+import { MdFileUpload } from "react-icons/md";
 
 const FirstPart = ({btnState,setBtnState}) => {
   return (
@@ -31,7 +30,15 @@ const FirstPart = ({btnState,setBtnState}) => {
           <h4 className='font-medium text-base text-[#222222]'>Upload Resume</h4>
           <p className='text-sm font-medium text-[#222222]'>(File accepted: .pdf, .doc/docx - Max file size: 150KB for demo limit)</p>
           <div className='p-2 border border-[#DDDDDD] rounded'>
-            <input type="file" id="myFile" name="filename" style={{color:'#999999',fontSize:'14px', fontWeight:'400'}} />
+            <div className='relative h-9 flex items-center'>
+              {/* <div className='absolute bg-[#1DBE72] top-0 left-0 w-2/5 h-full flex justify-center items-center rounded-lg'>
+                <button className="flex items-center gap-2 text-sm font-normal">
+                  <MdFileUpload className="text-2xl text-white"/>
+                  <span className="text-white">Choose File</span>
+                </button>
+              </div> */}
+              <input type="file" id="myFile" name="filename" style={{color:'#999999',fontSize:'14px', fontWeight:'400'}} />
+            </div>
           </div>
         </div>
         <div className="bg-[#F0F0F0] w-full h-0.5 rounded-lg mt-5 mb-2"></div>
