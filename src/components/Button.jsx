@@ -1,5 +1,5 @@
 "use client";
-const SubmitButton = ({ btnState, setBtnState }) => {
+const Button = ({ btnState, setBtnState }) => {
   return (
     <div className="flex justify-end gap-3">
       {btnState >= 2 && (
@@ -20,4 +20,4 @@ const SubmitButton = ({ btnState, setBtnState }) => {
   );
 };
 
-export default SubmitButton;
+export default Button;

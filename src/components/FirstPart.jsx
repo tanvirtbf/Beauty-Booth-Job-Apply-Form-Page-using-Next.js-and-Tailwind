@@ -1,11 +1,9 @@
-import React from 'react'
+import SubmitButton from './Button'
 import ProgressBar from './ProgressBar'
-import SubmitButton from './SubmitButton'
 
 const FirstPart = ({btnState,setBtnState}) => {
   return (
-    <div className='text-black w-full sm:w-2/5 p-5 flex flex-col gap-4'>
-      <ProgressBar btnState={btnState} />
+    <div className='text-black w-full py-5 flex flex-col gap-4'>
       <div className="flex flex-col gap-1">
         <h3 className='text-xl text-[#222222] font-medium'>Personal info</h3>
       </div>
@@ -37,13 +35,48 @@ const FirstPart = ({btnState,setBtnState}) => {
           </div>
         </div>
         <div className="bg-[#F0F0F0] w-full h-0.5 rounded-lg mt-5 mb-2"></div>
-        <SubmitButton setBtnState={setBtnState} btnState={btnState} />
       </form>
     </div>
   )
 }
 
 export default FirstPart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // "use client"
