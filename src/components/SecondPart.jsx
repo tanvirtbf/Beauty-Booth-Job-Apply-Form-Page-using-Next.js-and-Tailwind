@@ -1,4 +1,13 @@
-const SecondPart = ({ btnState, setBtnState }) => {
+import PreviousMap from "postcss/lib/previous-map";
+import { useState } from "react";
+
+const SecondPart = () => {
+  const [secondFormData,setSecondFormData] = useState({
+    skill : '',
+    experience : '',
+    salary : '',
+  })
+
   return (
     <div className="text-black w-full p-5 flex flex-col gap-4">
       <form className="flex flex-col gap-3">
@@ -11,6 +20,8 @@ const SecondPart = ({ btnState, setBtnState }) => {
             name=""
             id="english"
             className="text-base bg-white inputBorder text-black cursor-pointer rounded"
+            value={secondFormData.skill}
+            onChange={(e)=> setSecondFormData((PrevState)=> ({...PrevState, skill : e.target.value}))}
           >
             <option value="">Select..</option>
             <option value="1">1</option>
@@ -35,6 +46,8 @@ const SecondPart = ({ btnState, setBtnState }) => {
             placeholder="Your Answer"
             required
             className="inputBorder"
+            value={secondFormData.experience}
+            onChange={(e)=> setSecondFormData((PrevState)=> ({...PrevState, experience: e.target.value}))}
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -47,6 +60,8 @@ const SecondPart = ({ btnState, setBtnState }) => {
             placeholder="Your Answer"
             required
             className="inputBorder"
+            value={secondFormData.salary}
+            onChange={(e)=> setSecondFormData((PrevState)=> ({...PrevState, salary: e.target.value}))}
           />
         </div>
         <div className="bg-[#F0F0F0] w-full h-0.5 rounded-lg mt-5 mb-2"></div>

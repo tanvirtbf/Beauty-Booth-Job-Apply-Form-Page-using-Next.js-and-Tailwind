@@ -1,28 +1,41 @@
-import { MdFileUpload } from "react-icons/md";
+"use client"
+import { useState } from "react";
+import Button from "./Button";
 
-const FirstPart = ({btnState,setBtnState}) => {
+const FirstPart = () => {
+  const [firstFormData,setFirstFormData] = useState({
+    names : '',
+    email : '',
+    phone : '',
+    address : '',
+    isMale : false,
+    isFemale : false,
+    file : '',
+  })
+  const [errorMessage,setErrorMessage] = useState("")
+
   return (
     <div className='text-black w-full py-5 flex flex-col gap-4'>
       <div className="flex flex-col gap-1">
         <h3 className='text-xl text-[#222222] font-medium'>Personal info</h3>
       </div>
       <form className="flex flex-col gap-3">
-        <input type="text" placeholder='First and Last Name' required className='inputBorder' />
-        <input type="text" placeholder='Email Address' required className='inputBorder'/>
-        <input type="text" placeholder='Phone' required className='inputBorder'/>
-        <input type="text" placeholder='Address' required className='inputBorder'/>
+        <input type="text" placeholder='First and Last Name' required className='inputBorder' value={firstFormData.names} onChange={(e)=> setFirstFormData((prevState)=> ({...prevState,names: e.target.value}))} />
+        <input type="text" placeholder='Email Address' required className='inputBorder' value={firstFormData.email} onChange={(e)=> setFirstFormData((prevState)=> ({...prevState, email: e.target.value}))}/>
+        <input type="text" placeholder='Phone' required className='inputBorder' value={firstFormData.phone} onChange={(e)=> setFirstFormData((prevState)=> ({...prevState, phone: e.target.value}))}/>
+        <input type="text" placeholder='Address' required className='inputBorder' value={firstFormData.address} onChange={(e)=> setFirstFormData((prevState)=> ({...prevState, address: e.target.value}))}/>
         <div className='flex flex-col gap-1'>
           <div>
             <label htmlFor="Gender" className='text-base text-[#222222] font-medium'>Gender</label>
           </div>
           <div className='flex gap-2'>
-            <div className='flex gap-1 items-center'>
+            <div className='flex gap-1 items-center' onClick={(e)=> setFirstFormData((prevState)=> ({...prevState, isMale: true, isFemale: false}))}>
               <label htmlFor="male" className='text-sm text-[#222222] font-medium'>Male</label>
-              <input type="radio" name="" id="male" checked={false} />
+              <input type="radio" name="" id="male" checked={firstFormData.isMale}/>
             </div>
-            <div className='flex gap-1 items-center'>
+            <div className='flex gap-1 items-center' onClick={(e)=> setFirstFormData((prevState)=> ({...prevState, isMale: false, isFemale: true}))}>
               <label htmlFor="female" className='text-sm text-[#222222] font-medium'>Female</label>
-              <input type="radio" name="" id="female" checked={true} />
+              <input type="radio" name="" id="female" checked={firstFormData.isFemale}/>
             </div>
           </div>
         </div>
@@ -31,13 +44,7 @@ const FirstPart = ({btnState,setBtnState}) => {
           <p className='text-sm font-medium text-[#222222]'>(File accepted: .pdf, .doc/docx - Max file size: 150KB for demo limit)</p>
           <div className='p-2 border border-[#DDDDDD] rounded'>
             <div className='relative h-9 flex items-center'>
-              {/* <div className='absolute bg-[#1DBE72] top-0 left-0 w-2/5 h-full flex justify-center items-center rounded-lg'>
-                <button className="flex items-center gap-2 text-sm font-normal">
-                  <MdFileUpload className="text-2xl text-white"/>
-                  <span className="text-white">Choose File</span>
-                </button>
-              </div> */}
-              <input type="file" id="myFile" name="filename" style={{color:'#999999',fontSize:'14px', fontWeight:'400'}} />
+              <input type="file" id="myFile" name="filename" style={{color:'#999999',fontSize:'14px', fontWeight:'400'}} value={firstFormData.file} onChange={(e)=> setFirstFormData((prevState)=> ({...prevState, file: e.target.value}))} />
             </div>
           </div>
         </div>
@@ -91,7 +98,7 @@ export default FirstPart
 // import ProgressBar from './ProgressBar'
 // import SubmitButton from './SubmitButton'
 
-// const FirstPart = ({btnState,setBtnState}) => {
+// const FirstPart = ({,set}) => {
 //   const [firstForm,setFirstForm] = useState({
 //     name : '',
 //     email : '',
@@ -104,7 +111,7 @@ export default FirstPart
 //   console.log(firstForm.file)
 //   return (
 //     <div className='text-black w-full sm:w-2/5 p-5 flex flex-col gap-4'>
-//       <ProgressBar btnState={btnState} />
+//       <ProgressBar ={} />
 //       <div className="flex flex-col gap-1">
 //         <h3 className='text-xl text-[#222222] font-medium'>Personal info</h3>
 //       </div>
@@ -136,7 +143,7 @@ export default FirstPart
 //           </div>
 //         </div>
 //         <div className="bg-[#F0F0F0] w-full h-0.5 rounded-lg mt-5 mb-2"></div>
-//         <SubmitButton setBtnState={setBtnState} btnState={btnState} />
+//         <SubmitButton set={set} ={} />
 //       </form>
 //     </div>
 //   )
