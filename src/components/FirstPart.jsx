@@ -1,8 +1,18 @@
-import React from 'react'
+"use client"
+import { useState } from 'react'
 import ProgressBar from './ProgressBar'
 import SubmitButton from './SubmitButton'
 
 const FirstPart = ({btnState,setBtnState}) => {
+  const [firstForm,setFirstForm] = useState({
+    name : '',
+    email : '',
+    phone : '',
+    address : '',
+    isMale : false,
+    isFemale : false,
+  })
+  console.log(firstForm.name)
   return (
     <div className='text-black w-full sm:w-2/5 p-5 flex flex-col gap-4'>
       <ProgressBar btnState={btnState} />
@@ -10,22 +20,22 @@ const FirstPart = ({btnState,setBtnState}) => {
         <h3 className='text-xl text-[#222222] font-medium'>Personal info</h3>
       </div>
       <form className="flex flex-col gap-3">
-        <input type="text" placeholder='First and Last Name' required className='inputBorder' />
-        <input type="text" placeholder='Email Address' required className='inputBorder'/>
-        <input type="text" placeholder='Phone' required className='inputBorder'/>
-        <input type="text" placeholder='Address' required className='inputBorder'/>
+        <input type="text" placeholder='First and Last Name' required className='inputBorder' value={firstForm.name} onChange={(e)=> setFirstForm((prevState)=> ({...prevState, name : e.target.value}))} />
+        <input type="text" placeholder='Email Address' required className='inputBorder' value={firstForm.email} onChange={(e)=> setFirstForm((prevState)=> ({...prevState, email: e.target.value}))}/>
+        <input type="text" placeholder='Phone' required className='inputBorder' value={firstForm.phone} onChange={(e)=> setFirstForm((prevState)=> ({...prevState, phone: e.target.value}))}/>
+        <input type="text" placeholder='Address' required className='inputBorder' value={firstForm.address} onChange={(e)=> setFirstForm((prevState)=> ({...prevState, address: e.target.value}))}/>
         <div className='flex flex-col gap-1'>
           <div>
             <label htmlFor="Gender" className='text-base text-[#222222] font-medium'>Gender</label>
           </div>
           <div className='flex gap-2'>
-            <div className='flex gap-1 items-center'>
+            <div className='flex gap-1 items-center' onClick={()=> setFirstForm((prevState)=> ({...prevState, isMale : true, isFemale : false}))}>
               <label htmlFor="male" className='text-sm text-[#222222] font-medium'>Male</label>
-              <input type="radio" name="" id="male" checked={false} />
+              <input type="radio" name="" id="male" checked={firstForm.isMale}/>
             </div>
-            <div className='flex gap-1 items-center'>
+            <div className='flex gap-1 items-center' onClick={()=> setFirstForm((prevState)=> ({...prevState, isMale: false,isFemale: true}))}>
               <label htmlFor="female" className='text-sm text-[#222222] font-medium'>Female</label>
-              <input type="radio" name="" id="female" checked={true} />
+              <input type="radio" name="" id="female" checked={firstForm.isFemale}/>
             </div>
           </div>
         </div>
